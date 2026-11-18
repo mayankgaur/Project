@@ -1,0 +1,51 @@
+@using Microsoft.Extensions.Localization
+@using OrderDiscount.Web.Resources
+@model OrderDiscount.Web.Models.OrderFormViewModel
+@inject IStringLocalizer<SharedResource> Localizer
+@{ Layout = null; }
+<!DOCTYPE html>
+<html lang="@Model.Culture">
+<head>
+    <meta charset="utf-8" />
+    <title>@Localizer["UI.PageTitle"]</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 540px; margin: 40px auto; padding: 0 16px; color: #222; }
+        .lang-bar { margin-bottom: 18px; } .lang-bar a { margin-right: 12px; color: #0b57d0; text-decoration: none; }
+        p { margin-bottom: 14px; } label { display: block; font-weight: 600; margin-bottom: 4px; }
+        input, select { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 18px; background: #0b57d0; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        .error { background: #fdecea; color: #b71c1c; padding: 10px; border-radius: 4px; margin-bottom: 16px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #f4f7fb; border: 1px solid #d0d7de; }
+        td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; } td:last-child { text-align: right; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <p class="lang-bar"><a href="?culture=en-US">English</a><a href="?culture=de-DE">Deutsch</a></p>
+    <h1>@Localizer["UI.PageTitle"]</h1>
+    @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage)) { <p class="error">@Model.ErrorMessage</p> }
+    <form method="post" action="/orders?culture=@Model.Culture">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="Culture" value="@Model.Culture" />
+        <p><label for="OrderId">@Localizer["UI.OrderId"]</label><input id="OrderId" name="OrderId" value="@Model.OrderId" placeholder="ORD-1001" /></p>
+        <p><label for="CustomerName">@Localizer["UI.CustomerName"]</label><input id="CustomerName" name="CustomerName" value="@Model.CustomerName" placeholder="Jane Doe" /></p>
+        <p><label for="OrderAmount">@Localizer["UI.OrderAmount"]</label><input id="OrderAmount" name="OrderAmount" type="number" step="0.01" value="@Model.OrderAmount" placeholder="250.00" /></p>
+        <p><label for="CustomerType">@Localizer["UI.CustomerType"]</label>
+            <select id="CustomerType" name="CustomerType">
+                @foreach (var t in Model.AvailableCustomerTypes) { <option value="@t" selected="@(Model.CustomerType == t)">@t</option> }
+            </select>
+        </p>
+        <button type="submit">@Localizer["UI.CalculateButton"]</button>
+    </form>
+    @if (Model.Result is not null)
+    {
+        <table>
+            <tr><td>@Localizer["UI.OrderId"]</td><td>@Model.Result.OrderId</td></tr>
+            <tr><td>@Localizer["UI.CustomerName"]</td><td>@Model.Result.CustomerName (@Model.Result.CustomerType)</td></tr>
+            <tr><td>@Localizer["UI.OriginalAmount"]</td><td>@Model.Result.OriginalAmount.ToString("N2")</td></tr>
+            <tr><td>@Localizer["UI.DiscountRate"]</td><td>@Model.Result.DiscountPercentage.ToString("N2")%</td></tr>
+            <tr><td>@Localizer["UI.DiscountAmount"]</td><td>-@Model.Result.DiscountAmount.ToString("N2")</td></tr>
+            <tr><td>@Localizer["UI.FinalAmount"]</td><td>@Model.Result.FinalAmount.ToString("N2")</td></tr>
+        </table>
+    }
+</body>
+</html>

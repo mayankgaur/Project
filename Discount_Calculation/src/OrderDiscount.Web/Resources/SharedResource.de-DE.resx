@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Error.OrderIdRequired" xml:space="preserve"><value>Bestellnummer ist erforderlich.</value></data>
+  <data name="Error.CustomerNameRequired" xml:space="preserve"><value>Kundenname ist erforderlich.</value></data>
+  <data name="Error.OrderAmountInvalid" xml:space="preserve"><value>Der Bestellbetrag muss grÃ¶ÃŸer als null sein.</value></data>
+  <data name="Error.CustomerTypeRequired" xml:space="preserve"><value>Kundentyp ist erforderlich.</value></data>
+  <data name="Error.UnsupportedCustomerType" xml:space="preserve"><value>Der Kundentyp '{0}' wird nicht unterstÃ¼tzt.</value></data>
+  <data name="Error.RateNotConfigured" xml:space="preserve"><value>Der Rabattsatz fÃ¼r '{0}' ist nicht konfiguriert.</value></data>
+  <data name="UI.PageTitle" xml:space="preserve"><value>Bestellrabatt-Rechner</value></data>
+  <data name="UI.OrderId" xml:space="preserve"><value>Bestellnummer</value></data>
+  <data name="UI.CustomerName" xml:space="preserve"><value>Kundenname</value></data>
+  <data name="UI.OrderAmount" xml:space="preserve"><value>Bestellbetrag</value></data>
+  <data name="UI.CustomerType" xml:space="preserve"><value>Kundentyp</value></data>
+  <data name="UI.CalculateButton" xml:space="preserve"><value>Rabatt berechnen</value></data>
+  <data name="UI.OriginalAmount" xml:space="preserve"><value>UrsprÃ¼nglicher Betrag</value></data>
+  <data name="UI.DiscountRate" xml:space="preserve"><value>Rabattsatz</value></data>
+  <data name="UI.DiscountAmount" xml:space="preserve"><value>Rabattbetrag</value></data>
+  <data name="UI.FinalAmount" xml:space="preserve"><value>Endbetrag</value></data>
+</root>

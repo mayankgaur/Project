@@ -1,0 +1,11 @@
+{
+  "info": { "name": "Order Discount API", "schema": "https://getpostman.com" },
+  "variable": [ { "key": "baseUrl", "value": "http://localhost:5000" }, { "key": "bearerToken", "value": "" } ],
+  "item": [
+    { "name": "Get Customer Types", "request": { "method": "GET", "url": "{{baseUrl}}/api/v1/discounts/customer-types" } },
+    { "name": "Regular (5%)", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\"orderId\":\"ORD-1001\",\"customerName\":\"Alice\",\"orderAmount\":200,\"customerType\":\"Regular\"}" }, "url": "{{baseUrl}}/api/v1/discounts/calculate" } },
+    { "name": "Premium (10%)", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\"orderId\":\"ORD-1002\",\"customerName\":\"Bob\",\"orderAmount\":450.50,\"customerType\":\"Premium\"}" }, "url": "{{baseUrl}}/api/v1/discounts/calculate" } },
+    { "name": "VIP (15%)", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\"orderId\":\"ORD-1003\",\"customerName\":\"Clara\",\"orderAmount\":1200,\"customerType\":\"VIP\"}" }, "url": "{{baseUrl}}/api/v1/discounts/calculate" } },
+    { "name": "Invalid Amount (German)", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" }, { "key": "Accept-Language", "value": "de-DE" } ], "body": { "mode": "raw", "raw": "{\"orderId\":\"ORD-1004\",\"customerName\":\"Lukas\",\"orderAmount\":0,\"customerType\":\"VIP\"}" }, "url": "{{baseUrl}}/api/v1/discounts/calculate" } }
+  ]
+}

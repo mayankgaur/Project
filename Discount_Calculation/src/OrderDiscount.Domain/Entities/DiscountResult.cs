@@ -1,0 +1,2 @@
+namespace OrderDiscount.Domain.Entities;
+public sealed record DiscountResult(string OrderId, string CustomerName, string CustomerType, decimal OriginalAmount, decimal DiscountRate, decimal DiscountAmount, decimal FinalAmount, DateTimeOffset CalculatedAtUtc);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Error.OrderIdRequired" xml:space="preserve"><value>Order ID is required.</value></data>
+  <data name="Error.CustomerNameRequired" xml:space="preserve"><value>Customer name is required.</value></data>
+  <data name="Error.OrderAmountInvalid" xml:space="preserve"><value>Order amount must be greater than zero.</value></data>
+  <data name="Error.CustomerTypeRequired" xml:space="preserve"><value>Customer type is required.</value></data>
+  <data name="Error.UnsupportedCustomerType" xml:space="preserve"><value>Customer type '{0}' is not supported.</value></data>
+  <data name="Error.RateNotConfigured" xml:space="preserve"><value>Discount rate for '{0}' is not configured.</value></data>
+  <data name="UI.PageTitle" xml:space="preserve"><value>Order Discount Calculator</value></data>
+  <data name="UI.OrderId" xml:space="preserve"><value>Order ID</value></data>
+  <data name="UI.CustomerName" xml:space="preserve"><value>Customer Name</value></data>
+  <data name="UI.OrderAmount" xml:space="preserve"><value>Order Amount</value></data>
+  <data name="UI.CustomerType" xml:space="preserve"><value>Customer Type</value></data>
+  <data name="UI.CalculateButton" xml:space="preserve"><value>Calculate Discount</value></data>
+  <data name="UI.OriginalAmount" xml:space="preserve"><value>Original Amount</value></data>
+  <data name="UI.DiscountRate" xml:space="preserve"><value>Discount Rate</value></data>
+  <data name="UI.DiscountAmount" xml:space="preserve"><value>Discount Amount</value></data>
+  <data name="UI.FinalAmount" xml:space="preserve"><value>Final Payable Amount</value></data>
+</root>
